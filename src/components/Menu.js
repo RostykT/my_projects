@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledMenu = styled.nav`
-	transform: translateX(-100%);
+	transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -38,9 +38,9 @@ const StyledMenu = styled.nav`
 	}
 `;
 
-function Menu() {
+function Menu({ open }) {
 	return (
-		<StyledMenu>
+		<StyledMenu open={open}>
 			<a href="/">About us</a>
 			<a href="/">Pricing</a>
 			<a href="/">Contact</a>
