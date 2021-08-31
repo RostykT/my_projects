@@ -92,17 +92,23 @@ const SideBtnRoute = styled(LinkR)`
 	}
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggle }) => {
 	return (
-		<SidebarContainer>
+		<SidebarContainer isOpen={isOpen} onClick={toggle}>
 			<Icon>
 				<CloseIcon />
 			</Icon>
 			<SidebarWrapper>
 				<SidebarMenu>
-					<SidebarLink to="about">About</SidebarLink>
-					<SidebarLink to="project">Project</SidebarLink>
-					<SidebarLink to="contact">Contact</SidebarLink>
+					<SidebarLink to="about" onClick={toggle}>
+						About
+					</SidebarLink>
+					<SidebarLink to="project" onClick={toggle}>
+						Project
+					</SidebarLink>
+					<SidebarLink to="contact" onClick={toggle}>
+						Contact
+					</SidebarLink>
 				</SidebarMenu>
 				<SideBtnWrap>
 					<SideBtnRoute to="/">Sign Up</SideBtnRoute>

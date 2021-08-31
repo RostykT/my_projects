@@ -120,13 +120,13 @@ const NavBtnLink = styled(LinkR)`
 	}
 `;
 
-function Navbar() {
+function Navbar({ toggle }) {
 	return (
 		<>
 			<Nav>
 				<NavbarContainer>
 					<NavLogo to="/">Portfolio</NavLogo>
-					<MobileIcon>
+					<MobileIcon onClick={toggle}>
 						<FaBars />
 					</MobileIcon>
 					<NavMenu>
