@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
-import { Link as LinkS } from "react-scroll";
+import { Link as LinkS, animateScroll } from "react-scroll";
+
 import { FaBars } from "react-icons/fa";
 
 const Nav = styled.nav`
@@ -31,7 +32,7 @@ const NavbarContainer = styled.div`
 	max-width: 1100px;
 `;
 
-const NavLogo = styled(LinkR)`
+const NavLogo = styled(LinkS)`
 	color: #fff;
 	justify-content: flex-start;
 	display: flex;
@@ -79,6 +80,9 @@ const NavMenu = styled.ul`
 
 const NavItem = styled.li`
 	height: 80px;
+	.active {
+		border-bottom: 1px solid white;
+	}
 `;
 
 const NavLink = styled(LinkS)`
@@ -89,6 +93,10 @@ const NavLink = styled(LinkS)`
 	padding: 0 1rem;
 	height: 100%;
 	cursor: pointer;
+
+	&.active {
+		border-bottom: 3px solid #01bf71;
+	}
 
 	&:hover {
 		transition: all 0.2s ease-in-out;
@@ -128,27 +136,54 @@ const NavBtnLink = styled(LinkR)`
 `;
 
 function Navbar({ toggle }) {
+	const scrollToTop = () => {
+		animateScroll.scrollToTop();
+	};
 	return (
 		<>
 			<Nav>
 				<NavbarContainer>
-					<NavLogo to="/">Portfolio</NavLogo>
+					<NavLogo onClick={scrollToTop}>Portfolio</NavLogo>
 					<MobileIcon onClick={toggle}>
 						<FaBars />
 					</MobileIcon>
 					<NavMenu>
 						<NavItem>
-							<NavLink to="about">About</NavLink>
+							<NavLink
+								activeClass="active"
+								to="about"
+								spy={true}
+								smooth={true}
+								duration={500}
+							>
+								About
+							</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to="project"> Projects</NavLink>
+							<NavLink
+								activeClass="active"
+								to="projects"
+								spy={true}
+								smooth={true}
+								duration={500}
+							>
+								Projects
+							</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to="contact">Contact</NavLink>
+							<NavLink
+								activeClass="active"
+								to="contact"
+								spy={true}
+								smooth={true}
+								duration={500}
+							>
+								Contact
+							</NavLink>
 						</NavItem>
 					</NavMenu>
 					<NavBtn>
-						<NavBtnLink to="/signin">Sign In</NavBtnLink>
+						<NavBtnLink to="/">Sign In</NavBtnLink>
 					</NavBtn>
 				</NavbarContainer>
 			</Nav>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Video from "../../video/video.mp4";
 import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
 import Button from "../ButtonElement";
+import Fade from "react-reveal/Fade";
 
 const HeroContainer = styled.div`
 	background: #0c0c0c;
@@ -98,16 +99,23 @@ function Hero() {
 				<VideoBg autoPlay loop muted src={Video} type="video/mp4" />
 			</HeroBg>
 			<HeroContent>
-				<HeroH1>My Portfolio</HeroH1>
-				<HeroP>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna
-					aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-					ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</HeroP>
+				<Fade bottom>
+					<HeroH1>My Portfolio</HeroH1>
+					<HeroP>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					</HeroP>
+				</Fade>
+
 				<HeroBtnWrapper>
 					<Button
-						to="signup"
+						to="contact"
+						spy={true}
+						smooth={true}
+						duration={500}
 						onMouseEnter={onHover}
 						onMouseLeave={onHover}
 						dark="true"

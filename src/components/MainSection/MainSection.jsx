@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
 const Wrap = styled.div`
+	.active {
+		border-bottom: 1px solid white;
+	}
 	width: 100vw;
 	height: 100vh;
 	background-size: cover;
@@ -49,12 +52,12 @@ const ItemText = styled.div`
 	padding: 15vh;
 	text-align: center;
 `;
-function MainSection({ backgroundImg, title, description, color }) {
+function MainSection({ backgroundImg, title, description, color, id }) {
 	return (
 		<Wrap bgImage={backgroundImg}>
 			<Fade bottom>
-				<ItemText>
-					<MainH1 color={color}>{title}</MainH1>
+				<ItemText id={id}>
+					<MainH1 color={color}>{title} </MainH1>
 					<MainP color={color}>{description}</MainP>
 				</ItemText>
 			</Fade>
