@@ -1,0 +1,16 @@
+export const homeObjOne = {
+	id: "about",
+	lightBg: false,
+	lightText: true,
+	lightTextDesc: true,
+	topLine: "Portfolio",
+	headline: "lorem lorem lorem lorem lorem",
+	description: "best of the best lorem lorem lorem ",
+	buttonLabel: "Get Started",
+	imgStart: false,
+	img: require("../../images/svg-2.svg"),
+	alt: "Car",
+	dark: true,
+	primary: true,
+	darkText: false,
+};

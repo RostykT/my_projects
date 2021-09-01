@@ -5,9 +5,9 @@ import { Link as LinkS } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 
 const Nav = styled.nav`
-	background: #000;
+	background: rgba(13, 34, 14, 0.5);
 	height: 80px;
-	/* margin-top: -80px; */
+	margin-top: -80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -41,6 +41,11 @@ const NavLogo = styled(LinkR)`
 	margin-left: 24px;
 	font-weight: bold;
 	text-decoration: none;
+	&:hover {
+		transition: all 0.2s ease-in-out;
+
+		color: #01bf71;
+	}
 `;
 
 //navbar element
@@ -85,8 +90,10 @@ const NavLink = styled(LinkS)`
 	height: 100%;
 	cursor: pointer;
 
-	&.active {
-		border-bottom: 3px solid #01bf71;
+	&:hover {
+		transition: all 0.2s ease-in-out;
+
+		color: #01bf71;
 	}
 `;
 
@@ -134,10 +141,10 @@ function Navbar({ toggle }) {
 							<NavLink to="about">About</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to="about"> Projects</NavLink>
+							<NavLink to="project"> Projects</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to="about">Contact</NavLink>
+							<NavLink to="contact">Contact</NavLink>
 						</NavItem>
 					</NavMenu>
 					<NavBtn>

@@ -98,7 +98,12 @@ function Hero() {
 			</HeroBg>
 			<HeroContent>
 				<HeroH1>My Portfolio</HeroH1>
-				<HeroP>Lorem bla bla bla bla</HeroP>
+				<HeroP>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna
+					aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</HeroP>
 				<HeroBtnWrapper>
 					<Button
 						to="signup"
