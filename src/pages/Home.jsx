@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/HeroSection/Hero";
 import MainSection from "../components/MainSection/MainSection";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,7 @@ const Home = () => {
 				title="Contact"
 				color="#F7F7E8"
 			/>
+			<Footer />
 		</>
 	);
 };
