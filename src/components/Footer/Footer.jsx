@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaTwitter, FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
+import { animateScroll, Link as LinkR } from "react-scroll";
 
 const FooterContainer = styled.div`
 	background-color: #101522;
@@ -78,14 +79,14 @@ const SocialMediaWrap = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	max-width: 1100px;
-	margin: 40px auto 9 auto;
+	margin: 40px auto 9px auto;
 
 	@media screen and (max-width: 820px) {
 		flex-direction: column;
 	} ;
 `;
 
-const SocialLogo = styled(Link)`
+const SocialLogo = styled(LinkR)`
 	color: #fff;
 	justify-self: start;
 	cursor: pointer;
@@ -114,6 +115,9 @@ const SocialIconLink = styled.a`
 	font-size: 24px;
 `;
 const Footer = () => {
+	const scrollToTop = () => {
+		animateScroll.scrollToTop();
+	};
 	return (
 		<FooterContainer>
 			<FooterWrap>
@@ -149,11 +153,8 @@ const Footer = () => {
 				</FooterLinksContainer>
 				<SocialMedia>
 					<SocialMediaWrap>
-						<SocialLogo to="/">Portfolio</SocialLogo>
-						<WebSiteRights>
-							portfolio © {new Date().getFullYear()}. All rights
-							reserved.
-						</WebSiteRights>
+						<SocialLogo onClick={scrollToTop}>Portfolio</SocialLogo>
+
 						<SocialIcons>
 							<SocialIconLink
 								href="/"
@@ -186,6 +187,9 @@ const Footer = () => {
 						</SocialIcons>
 					</SocialMediaWrap>
 				</SocialMedia>
+				<WebSiteRights>
+					portfolio © {new Date().getFullYear()}. All rights reserved.
+				</WebSiteRights>
 			</FooterWrap>
 		</FooterContainer>
 	);

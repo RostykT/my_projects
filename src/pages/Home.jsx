@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/HeroSection/Hero";
 import MainSection from "../components/MainSection/MainSection";
 import Footer from "../components/Footer/Footer";
+import ContactSection from "../components/ ContactSection/ContactSection";
 
 const Home = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -35,10 +36,11 @@ const Home = () => {
 				title="Project"
 				description="Et netus et malesuada fames ac turpis. Commodo elit at imperdiet dui accumsan sit amet nulla. Nibh cras pulvinar mattis nunc sed blandit libero. Posuere lorem ipsum dolor sit amet. "
 			/>
-			<MainSection
+
+			<ContactSection
 				id="contact"
 				backgroundImg="forrest3.jpg"
-				title="Contact"
+				title="Contact Us"
 				color="#F7F7E8"
 			/>
 			<Footer />

@@ -18,7 +18,18 @@ const Wrap = styled.div`
 	align-items: center;
 	background-image: ${(props) => `url("/images/${props.bgImage}")`};
 `;
-
+const Container = styled.div`
+	width: 40%;
+	height: auto;
+	background: #a59f9f;
+	margin-top: 80px;
+	background: rgba(204, 204, 204, 0.3);
+	border-radius: 10px;
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	align-items: center;
+`;
 const MainH1 = styled.h1`
 	color: ${(props) => props.color};
 	font-size: 48px;
@@ -54,13 +65,15 @@ const ItemText = styled.div`
 `;
 function MainSection({ backgroundImg, title, description, color, id }) {
 	return (
-		<Wrap bgImage={backgroundImg}>
-			<Fade bottom>
-				<ItemText id={id}>
-					<MainH1 color={color}>{title} </MainH1>
-					<MainP color={color}>{description}</MainP>
-				</ItemText>
-			</Fade>
+		<Wrap bgImage={backgroundImg} id={id}>
+			<Container>
+				<Fade bottom>
+					<ItemText>
+						<MainH1 color={color}>{title} </MainH1>
+						<MainP color={color}>{description}</MainP>
+					</ItemText>
+				</Fade>
+			</Container>
 		</Wrap>
 	);
 }

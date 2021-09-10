@@ -32,7 +32,7 @@ const NavbarContainer = styled.div`
 	max-width: 1100px;
 `;
 
-const NavLogo = styled(LinkS)`
+const NavLogo = styled.div`
 	color: #fff;
 	justify-content: flex-start;
 	display: flex;
@@ -49,6 +49,21 @@ const NavLogo = styled(LinkS)`
 	}
 `;
 
+const NavLinkR = styled(LinkR)`
+	color: #fff;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 0 1rem;
+	height: 100%;
+	cursor: pointer;
+
+	&:hover {
+		transition: all 0.2s ease-in-out;
+
+		color: #01bf71;
+	}
+`;
 //navbar element
 
 const MobileIcon = styled.div`
@@ -155,6 +170,7 @@ function Navbar({ toggle }) {
 								spy={true}
 								smooth={true}
 								duration={500}
+								offset={0}
 							>
 								About
 							</NavLink>
@@ -181,9 +197,12 @@ function Navbar({ toggle }) {
 								Contact
 							</NavLink>
 						</NavItem>
+						<NavItem>
+							<NavLinkR to="/signup">Sign Up</NavLinkR>
+						</NavItem>
 					</NavMenu>
 					<NavBtn>
-						<NavBtnLink to="/">Sign In</NavBtnLink>
+						<NavBtnLink to="/signin">Sign In</NavBtnLink>
 					</NavBtn>
 				</NavbarContainer>
 			</Nav>
