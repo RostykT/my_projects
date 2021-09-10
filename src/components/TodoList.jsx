@@ -31,6 +31,7 @@ function TodoList() {
 			if (todo.id === id) {
 				todo.isComplete = !todo.isComplete;
 			}
+			return todo;
 		});
 		setTodos(updatedTodos);
 	};
