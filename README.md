@@ -44,3 +44,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 # tesla_clone
 # tesla_clone
+![Запис екрана 2022-04-03 о 21 12 18](https://user-images.githubusercontent.com/88705562/161445436-408da1ea-cd71-4296-9f61-0c866fd3e838.gif)
